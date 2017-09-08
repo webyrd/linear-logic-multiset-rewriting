@@ -1,13 +1,12 @@
 # Multiset Rewriting in miniKanren
 
-"A sexy title for a sexy topic!" - Will Byrd.
-
 Code by Chris Martens, Ramana Kumar, and Will Byrd.
 
 A miniKanren impementation of a fragment of linear logic programming
 corresponding to multiset rewriting!
 
-Inspired by the work of Chris Martens on 'Ceptre: A Language for Modeling Generative Interactive Systems'.
+Inspired by the work of Chris Martens on 'Ceptre: A Language for Modeling
+Generative Interactive Systems'.
 
 A multiset rewriting program consists of:
 - A set of terms/predicates that may exist in the state.
@@ -22,8 +21,9 @@ In our implementation this relation is described with the `step` relation.
 `step*` is the transitive closure. Every sequence of transitions
 constitutes a *trace*, 
 
-
-By encoding this problem in miniKanren, we can e
+By encoding this problem in miniKanren, we can execute queries on the set
+of possible traces ("trace space") in addition to exploring possible states
+discovered by the program ("state space").
 
 
 ## Example: a predator-prey ecology
