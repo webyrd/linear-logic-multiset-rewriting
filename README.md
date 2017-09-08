@@ -4,12 +4,25 @@ A sexy title for a sexy topic!
 
 Code by Chris Martens, Ramana Kumar, and Will Byrd.
 
-Linear-logic multi-set term rewriting in miniKanren for storytelling!
+A miniKanren impementation of a fragment of linear logic programming
+corresponding to multiset rewriting!
 
 Inspired by the work of Chris Martens on 'Ceptre: A Language for Modeling Generative Interactive Systems'.
 
-TODO: Chris, please explain what is going onnnnnnnn!  :)
+A multiset rewriting program consists of:
+- A set of terms/predicates that may exist in the state.
+- An initial state, which is a multiset of term/predicate instances.
+- A set of rules of the form P -o Q, where P and Q are multisets.
 
+The program executes via a transition relation on states. This relation is
+induced by the rules. For each rule r : P -o Q, any multiset where P is a
+subset, written {M, P}, can take a step: {M, P} --> {M, Q}.
+
+In our implementation this relation is described with the `step` relation.
+`step*` is the transitive closure.
+
+
+## Example: a predator-prey ecology
 
 A few of the rules for foxes and rabbits
 
