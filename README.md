@@ -1,6 +1,6 @@
-# linear-logic-multiset-rewriting
+# Multiset Rewriting in miniKanren
 
-A sexy title for a sexy topic!
+"A sexy title for a sexy topic!" - Will Byrd.
 
 Code by Chris Martens, Ramana Kumar, and Will Byrd.
 
@@ -12,14 +12,18 @@ Inspired by the work of Chris Martens on 'Ceptre: A Language for Modeling Genera
 A multiset rewriting program consists of:
 - A set of terms/predicates that may exist in the state.
 - An initial state, which is a multiset of term/predicate instances.
-- A set of rules of the form P -o Q, where P and Q are multisets.
+- A set of rules of the form `P -o Q`, where `P` and `Q` are multisets.
 
 The program executes via a transition relation on states. This relation is
-induced by the rules. For each rule r : P -o Q, any multiset where P is a
-subset, written {M, P}, can take a step: {M, P} --> {M, Q}.
+induced by the rules. For each rule `r : P -o Q`, any multiset where `P` is a
+subset, written `{M, P}`, can take a step: `{M, P} --> {M, Q}`.
 
 In our implementation this relation is described with the `step` relation.
-`step*` is the transitive closure.
+`step*` is the transitive closure. Every sequence of transitions
+constitutes a *trace*, 
+
+
+By encoding this problem in miniKanren, we can e
 
 
 ## Example: a predator-prey ecology
