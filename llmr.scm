@@ -61,6 +61,8 @@
       (appendo q delta^ delta^^))))
 
 ;; reflexive, transitive closure of step
+;; "step* delta delta^^ trace"
+;; where trace is a list of the rules that fired
 (define step*
   (lambda (delta delta^^ trace)
     (conde
