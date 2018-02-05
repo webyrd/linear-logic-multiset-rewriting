@@ -60,6 +60,17 @@
       (split p delta delta^)
       (appendo q delta^ delta^^))))
 
+(define stepn
+  (lambda (n delta delta^^ trace)
+    (conde
+      [(== n 0) (== '() trace)]
+      [(fresh (delta^ name tr)
+          (step delta delta^ name)
+          (stepn (n-1) delta^ delta^^ tr)
+          (== `((,name) . ,tr) trace))]
+    )))
+
+
 ;; reflexive, transitive closure of step
 ;; "step* delta delta^^ trace"
 ;; where trace is a list of the rules that fired

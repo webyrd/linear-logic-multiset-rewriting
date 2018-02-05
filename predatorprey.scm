@@ -1,5 +1,5 @@
 (load "mk/mk.scm")
-(load "mk/llmr.scm")
+(load "llmr.scm")
 
 (define initial-state '((fox hungry) (fox hungry) rabbit rabbit))
 
